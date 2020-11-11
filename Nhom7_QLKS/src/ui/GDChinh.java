@@ -1,4 +1,4 @@
-package gui;
+package ui;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -23,7 +23,6 @@ public class GDChinh extends JFrame{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
 	/**
 	 * Launch the application.
 	 */
@@ -176,18 +175,19 @@ public class GDChinh extends JFrame{
 		lblTieuDe.setForeground(new Color(255, 165, 0));
 		pnTieuDe.add(lblTieuDe);
 		
-		JLabel lblTenTaiKhoan = new JLabel("username01");
-		lblTenTaiKhoan.setForeground(new Color(255, 255, 255));
-		lblTenTaiKhoan.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTenTaiKhoan.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-		lblTenTaiKhoan.setBounds(720, 6, 120, 14);
-		pnTieuDe.add(lblTenTaiKhoan);
+//		JLabel lblTenTaiKhoan = new JLabel();
+//		lblTenTaiKhoan.setForeground(new Color(255, 255, 255));
+//		lblTenTaiKhoan.setHorizontalAlignment(SwingConstants.CENTER);
+//		lblTenTaiKhoan.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+//		lblTenTaiKhoan.setBounds(720, 6, 120, 14);
+//		lblTenTaiKhoan.setText("chào ");
+//		pnTieuDe.add(lblTenTaiKhoan);
 		
 		JLabel lblDangXuat = new JLabel("Đăng xuất");
 		lblDangXuat.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				int thoat = JOptionPane.showConfirmDialog(null, "Bạn có muốn đăng xuất khỏi tài khoản " + lblTenTaiKhoan.getText() + " không?", "Nhắc nhở", JOptionPane.YES_NO_OPTION);
+				int thoat = JOptionPane.showConfirmDialog(null, "Bạn có muốn đăng xuất không?", "Nhắc nhở", JOptionPane.YES_NO_OPTION);
 				if(thoat == JOptionPane.YES_OPTION) {
 					new GDDangNhap().setVisible(true);
 					dispose();

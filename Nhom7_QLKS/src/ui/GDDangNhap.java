@@ -1,4 +1,4 @@
-package gui;
+package ui;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -16,10 +16,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JRootPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.BevelBorder;
+
+import entity.TaiKhoan;
 
 public class GDDangNhap extends JFrame{
 
@@ -28,7 +31,7 @@ public class GDDangNhap extends JFrame{
 	 */
 	private static final long serialVersionUID = 1L;
 	private JTextField txtTaiKhoan;
-	private JTextField txtMtKhu;
+	private JTextField txtMatKhau;
 	private JPanel pnHinhNen;
 	private JLabel lblHinhNen;
 	private JLabel lblTieuDe;
@@ -133,41 +136,50 @@ public class GDDangNhap extends JFrame{
 		txtTaiKhoan.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txtTaiKhoan.setForeground(SystemColor.window);
 		txtTaiKhoan.setBackground(SystemColor.controlDkShadow);
-		txtTaiKhoan.setText("Tài khoản");
 		txtTaiKhoan.setBounds(59, 99, 257, 38);
 		pnDangNhap.add(txtTaiKhoan);
 		txtTaiKhoan.setColumns(10);
 		
-		txtMtKhu = new JTextField();
-		txtMtKhu.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		txtMtKhu.setBackground(SystemColor.controlDkShadow);
-		txtMtKhu.setForeground(SystemColor.window);
-		txtMtKhu.setText("Mật khẩu");
-		txtMtKhu.setColumns(10);
-		txtMtKhu.setBounds(59, 174, 257, 38);
-		pnDangNhap.add(txtMtKhu);
+		txtMatKhau = new JPasswordField();
+		txtMatKhau.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		txtMatKhau.setBackground(SystemColor.controlDkShadow);
+		txtMatKhau.setForeground(SystemColor.window);
+		txtMatKhau.setColumns(10);
+		txtMatKhau.setBounds(59, 174, 257, 38);
+		pnDangNhap.add(txtMatKhau);
+		
+		txtTaiKhoan.setText("admin");
+		txtMatKhau.setText("admin");
 		
 		JButton btnDangNhap = new JButton("Đăng nhập");
 		btnDangNhap.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Object o = e.getSource();
 				if(o.equals(btnDangNhap)) {
-					new GDChinh().setVisible(true);
-					dispose();
+					TaiKhoan tk = new TaiKhoan();
+					if(!(tk.getTaiKhoan().equals(txtTaiKhoan.getText()) && tk.getMatKhau().equals(txtMatKhau.getText()))) {
+						JOptionPane.showMessageDialog(null, "Sai tài khoản hoặc mật khẩu !!! Vui lòng nhập lại");
+						txtMatKhau.setText("");
+						txtTaiKhoan.requestFocus();
+					}
+					else {
+						new GDChinh().setVisible(true);
+						dispose();
+					}			
 				}
 			}
 		});
 		btnDangNhap.setBackground(new Color(255, 255, 255));
 		btnDangNhap.setForeground(SystemColor.desktop);
 		btnDangNhap.setFont(new Font("Arial", Font.BOLD, 18));
-		btnDangNhap.setBounds(108, 268, 131, 38);
+		btnDangNhap.setBounds(108, 268, 133, 38);
 		btnDangNhap.setFocusable(false);
 		pnDangNhap.add(btnDangNhap);
 		
 		lblTieuDe = new JLabel("CHƯƠNG TRÌNH QUẢN LÝ THÔNG TIN THUÊ PHÒNG");
 		lblTieuDe.setBackground(Color.WHITE);
 		lblTieuDe.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTieuDe.setFont(new Font("Sitka Small", Font.BOLD, 35));
+		lblTieuDe.setFont(new Font("Sitka Small", Font.BOLD, 34));
 		lblTieuDe.setForeground(new Color(255, 165, 0));
 		lblTieuDe.setBounds(15, 66, 988, 54);
 		pnHinhNen.add(lblTieuDe);

@@ -1,4 +1,4 @@
-package gui;
+package ui;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -24,6 +24,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JTextField;
 
 public class GDThuePhong extends JFrame{
 
@@ -32,6 +33,7 @@ public class GDThuePhong extends JFrame{
 	 */
 	private static final long serialVersionUID = 1L;
 	private JTable tablePTP;
+	private JTextField txtSoPhong;
 
 	/**
 	 * Launch the application.
@@ -186,14 +188,15 @@ public class GDThuePhong extends JFrame{
 		lblChiaKhoa.setIcon(new ImageIcon(imgThuePhong));
 		pnTTTP.add(lblChiaKhoa);
 		
-		JLabel lblSGing = new JLabel("Số giường:");
-		lblSGing.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblSGing.setBounds(301, 73, 110, 23);
-		pnTTTP.add(lblSGing);
+		JLabel lblSoPhong = new JLabel("Số phòng:");
+		lblSoPhong.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblSoPhong.setBounds(263, 73, 110, 23);
+		pnTTTP.add(lblSoPhong);
 		
-		JComboBox cboSoLuongKH_1 = new JComboBox();
-		cboSoLuongKH_1.setBounds(421, 73, 74, 23);
-		pnTTTP.add(cboSoLuongKH_1);
+		txtSoPhong = new JTextField();
+		txtSoPhong.setBounds(363, 73, 132, 23);
+		pnTTTP.add(txtSoPhong);
+		txtSoPhong.setColumns(10);
 		
 		JPanel pnPTP = new JPanel();
 		pnPTP.setBackground(Color.WHITE);
