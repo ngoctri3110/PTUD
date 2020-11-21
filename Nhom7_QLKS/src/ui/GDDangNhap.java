@@ -39,7 +39,7 @@ public class GDDangNhap extends JFrame{
 	private JLabel lblMatKhau;
 	private JLabel lblTat;
 	private JLabel lblTaiKhoan;
-	
+
 	/**
 	 * Launch the application.
 	 */
@@ -58,6 +58,7 @@ public class GDDangNhap extends JFrame{
 
 	/**
 	 * Create the application.
+	 * @return 
 	 */
 	public GDDangNhap() {
 		setBounds(100, 100, 1024, 768);
