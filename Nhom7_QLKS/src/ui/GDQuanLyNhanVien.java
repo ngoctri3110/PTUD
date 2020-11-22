@@ -260,6 +260,12 @@ public class GDQuanLyNhanVien extends JFrame{
 		btnTaoTaiKhoan.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnTaoTaiKhoan.setFocusable(false);
 		btnTaoTaiKhoan.setBackground(SystemColor.info);
+		btnTaoTaiKhoan.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				new GDTaoTaiKhoan().setVisible(true);
+			}
+		});
 		
 		JButton btnTimKiem = new JButton("");
 		Image imgTimKiem = new ImageIcon(this.getClass().getResource("/img/timkiemthuephong.png")).getImage().getScaledInstance(15, 15, Image.SCALE_SMOOTH);
