@@ -34,9 +34,6 @@ import java.awt.SystemColor;
 
 public class GDQuanLyNhanVien extends JFrame{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 4289775796109531296L;
 	private JTextField txtTenNV;
 	private JTextField txtSDT;
@@ -57,9 +54,6 @@ public class GDQuanLyNhanVien extends JFrame{
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public GDQuanLyNhanVien(String tenTK) {
 		setTitle("Chương trình quản lý thông tin thuê phòng khách sạn Tâm Bình");
 		setBounds(100, 100, 1380, 755);
